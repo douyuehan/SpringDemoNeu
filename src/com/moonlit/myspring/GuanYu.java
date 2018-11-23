@@ -1,9 +1,14 @@
 package com.moonlit.myspring;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 /**
  * Created by Administrator on 2018/11/23.
  */
+@Component("guanyu")
 public class GuanYu implements Hero {
+    @Autowired
     private Weapon weapon;
 
     public Weapon getWeapon() {
