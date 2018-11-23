@@ -42,10 +42,10 @@
         </property>
     </bean>
 
-    <bean id = "dao" class="com.moonlit.myspring.Falchion"></bean>
+    <bean id = "weapon" class="com.moonlit.myspring.Falchion"></bean>
 
-    <bean id="guanyu" class="com.moonlit.myspring.GuanYu">
-        <property name="weapon" ref="dao"></property>
+    <bean id="guanyu" class="com.moonlit.myspring.GuanYu" autowire="byName">
+
     </bean>
 </beans>
         <!--Juggler duke = new Juggler()-->
