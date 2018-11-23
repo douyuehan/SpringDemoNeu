@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="xiaobao" class="com.moonlit.myspring.Songxiaobao"></bean>
+
+    <bean class="com.moonlit.myspring.Juggler">
+        <constructor-arg name="bags" value="8"></constructor-arg>
+    </bean>
+
+    <bean id = "shashibiya" class="com.moonlit.myspring.Sonnet29"></bean>
+
+    <bean id = "songxiaofeng" class="com.moonlit.myspring.ChinaPoem"></bean>
+
+
+    <bean id = "liudehua" class="com.moonlit.myspring.PoeticJugger">
+        <constructor-arg name="poem" ref="songxiaofeng"></constructor-arg>
+        <constructor-arg name="bags" value="77"></constructor-arg>
+    </bean>
+
+
+
+
+    <bean id = "zhaoliying" class="com.moonlit.myspring.MoonlightPoet"
+          p:poem-ref="shashibiya" p:age="55" p:name="zhangsan">
+
+        <property name="list">
+            <list>
+                <value>zhangsan</value>
+                <value>lisi</value>
+            </list>
+        </property>
+
+        <property name="map2">
+            <map>
+                <entry key="dog" value="狗"></entry>
+                <entry key="cat" value="猫"></entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id = "dao" class="com.moonlit.myspring.Falchion"></bean>
+
+    <bean id="guanyu" class="com.moonlit.myspring.GuanYu">
+        <property name="weapon" ref="dao"></property>
+    </bean>
+</beans>
+        <!--Juggler duke = new Juggler()-->
